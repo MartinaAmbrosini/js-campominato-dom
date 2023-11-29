@@ -17,13 +17,12 @@ let gridElement = document.getElementById("grid");
 
 const BombArr = genArrayRandomNum(1,100,16);
 
-console.log(BombArr)
+console.log(BombArr);
 
 // punteggio iniziale 
 let score = 0;
 
 playButton.addEventListener("click",
-
 
     // comparsa griglia al click del playbutton
         
@@ -41,7 +40,7 @@ playButton.addEventListener("click",
                 function(){
                     if(BombArr.includes(i)) {
                         myElement.classList.add("red")
-                        alert("Sei finito su una bomba! Try again. Il tuo punteggio è: ${score}");
+                        alert("Sei finito su una bomba! Try again. Il tuo punteggio è: " + score );
                     } else {
                         myElement.classList.add("azure");
                         score ++;
@@ -64,12 +63,12 @@ function createMyelement(tagtype, classname){
 
 // funzione che crea un array con ordinamento randomico di numeri in un range (min max)
 
-function genArrayRandomNum(minNum, maxNum, lenghtArray) {
+function genArrayRandomNum(minNum, maxNum, lengthArray) {
     
     const arrayToGen = [];
 
     // ciclo che mi popolerà l'array
-    while (arrayToGen.lenght < lenghtArray) {
+    while (arrayToGen.length < lengthArray) {
         // GENERO UN NUMERO RANDOM IN UN RANGE (MIN, MAX)
         let newNumber = genRandoNumMinMax(minNum, maxNum);
         // SE il numero gen NON è già presente nell'array
